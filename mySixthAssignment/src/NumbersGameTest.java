@@ -45,36 +45,30 @@ public class NumbersGameTest {
         //getting all the data
         System.out.println("Here is your information:" + myGame.getData());
         
-        //System.out.println("" + myGame.GuessResult());
-        
-        
+               
+        //all the tests to see if the player win or lose 
         if (myGame.IsStraight()) //boolean method
         {
             if (myGame.IsExactOrder()) {
                 betType = "Straight";
                 amountEarned = 600 * betAmount;    //player wins $600 for each $1 wagered
-                System.out.printf("\nThe amount you earned is: $%.2f ", amountEarned);
+                System.out.printf("\nCongratulations, You win!!! \n\nThe amount you earned is: $%.2f ", amountEarned);
             } else {
                 System.out.println("\nSorry, you lost. Try again next time!");
             }
         } else // Box bet
         {
-            System.out.println("Make the other method"); //boolean method 
+            if (myGame.IsAnyOrder())
+            {
+                betType = "Box";
+                amountEarned = betAmount * 100;
+                System.out.printf("\nCongratulations, You win!!! \n\nThe amount you earned is: $%.2f ", amountEarned);
+            }
+            else 
+            {
+                System.out.println("\nYou are not lucky today :( Sorry. Try again next time!");
+            }
         }
-        
-        
-      /*  if (playerNumbers / 100 == winningNumbers / 100)     //take and compare the first digit
-        {
-            System.out.println("you have one match" + playerNumbers % 10 );
-        }
-        else if (playerNumbers % 100 == winningNumbers % 100)   //
-        {
-            System.out.println("estoy perdidaaaaaaaaa");
-        }
-        else 
-        {
-            System.out.println("gfffjjh");
-        }*/
     }
     
     /* 456/100 cojo el 4 

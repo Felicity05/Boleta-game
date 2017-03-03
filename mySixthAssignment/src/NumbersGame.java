@@ -36,7 +36,7 @@ public class NumbersGame {
     //determine bet type
     public boolean IsStraight()
     {
-        return true;
+        return false;
     }
     
      
@@ -49,51 +49,22 @@ public class NumbersGame {
     }
     
     
-    //determine whether there is an “any order” match
-    public boolean IsAnyOrder()
+    //determine whether there is an “any order” match with different numbers
+   public boolean IsAnyOrder()
     {
-        return false;
+        boolean anyOrder;
+        anyOrder = (playerNumbers == winningNumber||
+                    playerNumbers/100 == winningNumber/100 ||
+                    playerNumbers%10 == winningNumber%10);
+        return anyOrder;
     }
     
     //determine whether a Box bet contains duplicate numbers
     public boolean HasDuplicates()
     {
-        return false;
+        return true;
     }
-    
-    
-    //all the coputations to determine if the person won or lost
-    /*public double GuessResult() {
-        if ("Straight".equals(betType)) //boolean method
-        {
-            if (playerNumbers == winningNumber) {
-                betType = "Straight";
-                amountEarned = 600 * betAmount;    //player wins $600 for each $1 wagered
-                System.out.printf("\nThe amount you earned is: $%.2f", amountEarned);
-            } else {
-                amountEarned = 0;
-                System.out.println("\nSorry, you lost. Try again next time!");
-            }
-        } else // Box bet
-        {
-            System.out.println(""); //boolean method 
-        }
-         {
-            if ("all three numbers match in any order" or  or )   //boolean method
-            {
-                //player wins
-                if ("player’s number contains duplicates") {
-                    amountEarned = 200 * betAmount;    //player wins $200 for each $1 wagered
-                } else {
-                    amountEarned = 100 * betAmount;    //player wins $100 for each $1 wagered
-                }
-            }
-            else
-            {
-                System.out.println("Sorry, you lost. Try again next time!");     
-                    }
-        }
-        return 0;*/
+   
 
     }
 
