@@ -44,7 +44,20 @@ public class NumbersGameTest {
         //getting all the data
         System.out.println("Here is your information:" + myGame.getData());
         
-        System.out.println("" + myGame.GuessResult());
+        //System.out.println("" + myGame.GuessResult());
+        
+        if (playerNumbers / 100 == winningNumbers / 100)     //take and compare the first digit
+        {
+            System.out.println("you have one match" + playerNumbers % 10 );
+        }
+        else if (playerNumbers % 100 == winningNumbers % 100)   //
+        {
+            System.out.println("estoy perdidaaaaaaaaa");
+        }
+        else 
+        {
+            System.out.println("gfffjjh");
+        }
     }
     
     

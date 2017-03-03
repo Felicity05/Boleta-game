@@ -33,20 +33,36 @@ public class NumbersGame {
         return dataSet;
     }
 
-    
     /*public boolean IsStraight()
     {
         return false;
     }*/
     
-
-
-//all the coputations to determine if the person won or lost
-    public double GuessResult() {
+    //determine whether there is an “exact order” match
+    public boolean IsExactOrder()
+    {
+        return false;
+    }
+    
+    
+    //determine whether there is an “any order” match
+    public boolean IsAnyOrder()
+    {
+        return false;
+    }
+    
+    //determine whether a Box bet contains duplicate numbers
+    public boolean HasDuplicates()
+    {
+        return false;
+    }
+    
+    
+    //all the coputations to determine if the person won or lost
+    /*public double GuessResult() {
         if ("Straight".equals(betType)) //boolean method
         {
-            if (playerNumbers == winningNumber) 
-            {
+            if (playerNumbers == winningNumber) {
                 betType = "Straight";
                 amountEarned = 600 * betAmount;    //player wins $600 for each $1 wagered
                 System.out.printf("\nThe amount you earned is: $%.2f", amountEarned);
@@ -56,9 +72,9 @@ public class NumbersGame {
             }
         } else // Box bet
         {
-            System.out.println("");
+            System.out.println(""); //boolean method 
         }
-       /* {
+         {
             if ("all three numbers match in any order" or  or )   //boolean method
             {
                 //player wins
@@ -72,9 +88,12 @@ public class NumbersGame {
             {
                 System.out.println("Sorry, you lost. Try again next time!");     
                     }
-        }*/
-      return 0;
-      
+        }
+        return 0;*/
+
     }
 
-}
+    
+    
+    
+    
