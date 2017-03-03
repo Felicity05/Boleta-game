@@ -43,6 +43,8 @@ public class NumbersGameTest {
         
         //getting all the data
         System.out.println("Here is your information:" + myGame.getData());
+        
+        System.out.println("" + myGame.GuessResult());
     }
     
     

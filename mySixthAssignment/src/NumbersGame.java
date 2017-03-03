@@ -27,34 +27,39 @@ public class NumbersGame {
     //returning the data 
     public String getData() {
         String dataSet = "\n\nYour bet type is: " + betType
-                + String.format("\n\nYour bet amount is: $%2f", betAmount) //fix the format to leave just 2 digits
+                + String.format("\n\nYour bet amount is: $%.2f", betAmount) //fix the format to leave just 2 digits
                 + "\n\nYour playing numbers are " + playerNumbers
                 + "\n\nThe winning number is " + winningNumber;
         return dataSet;
     }
 
-    /*
-    public void BetType()
+    
+    /*public boolean IsStraight()
     {
-        switch (betType)
-        {
-        case "Straight":
-            
-        }
+        return false;
     }*/
-    //all the coputations to determine if the person won or lost
+    
+
+
+//all the coputations to determine if the person won or lost
     public double GuessResult() {
-        if ("Straight".equals(betType)) {
-            if (playerNumbers / winningNumber == 1) //or % = 0 
+        if ("Straight".equals(betType)) //boolean method
+        {
+            if (playerNumbers == winningNumber) 
             {
                 betType = "Straight";
                 amountEarned = 600 * betAmount;    //player wins $600 for each $1 wagered
+                System.out.printf("\nThe amount you earned is: $%.2f", amountEarned);
             } else {
-                System.out.println("Sorry, you lost. Try again next time!");
+                amountEarned = 0;
+                System.out.println("\nSorry, you lost. Try again next time!");
             }
         } else // Box bet
         {
-            if ("all three numbers match in any order" or  or )
+            System.out.println("");
+        }
+       /* {
+            if ("all three numbers match in any order" or  or )   //boolean method
             {
                 //player wins
                 if ("player’s number contains duplicates") {
@@ -67,8 +72,9 @@ public class NumbersGame {
             {
                 System.out.println("Sorry, you lost. Try again next time!");     
                     }
-        }
-
+        }*/
+      return 0;
+      
     }
 
 }
