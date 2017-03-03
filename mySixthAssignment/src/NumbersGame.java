@@ -33,15 +33,19 @@ public class NumbersGame {
         return dataSet;
     }
 
-    /*public boolean IsStraight()
+    //determine bet type
+    public boolean IsStraight()
     {
-        return false;
-    }*/
+        return true;
+    }
     
+     
     //determine whether there is an “exact order” match
     public boolean IsExactOrder()
     {
-        return false;
+        boolean exactOrder;
+        exactOrder = (playerNumbers == winningNumber);
+        return exactOrder;
     }
     
     

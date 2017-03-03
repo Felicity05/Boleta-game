@@ -21,6 +21,7 @@ public class NumbersGameTest {
         double betAmount;
         int playerNumbers;
         int winningNumbers;
+        double amountEarned;
         String input;
     
         String betType = JOptionPane.showInputDialog("Select your bet type. \n\nIt can be either \"Straight\" or \"Box\" ");
@@ -46,7 +47,23 @@ public class NumbersGameTest {
         
         //System.out.println("" + myGame.GuessResult());
         
-        if (playerNumbers / 100 == winningNumbers / 100)     //take and compare the first digit
+        
+        if (myGame.IsStraight()) //boolean method
+        {
+            if (myGame.IsExactOrder()) {
+                betType = "Straight";
+                amountEarned = 600 * betAmount;    //player wins $600 for each $1 wagered
+                System.out.printf("\nThe amount you earned is: $%.2f ", amountEarned);
+            } else {
+                System.out.println("\nSorry, you lost. Try again next time!");
+            }
+        } else // Box bet
+        {
+            System.out.println("Make the other method"); //boolean method 
+        }
+        
+        
+      /*  if (playerNumbers / 100 == winningNumbers / 100)     //take and compare the first digit
         {
             System.out.println("you have one match" + playerNumbers % 10 );
         }
@@ -57,8 +74,12 @@ public class NumbersGameTest {
         else 
         {
             System.out.println("gfffjjh");
-        }
+        }*/
     }
     
-    
+    /* 456/100 cojo el 4 
+       456/10 cojo el 45
+       45 % 10 cojo el 5 
+       456 % 10 cojo el 6 
+     */
 }
