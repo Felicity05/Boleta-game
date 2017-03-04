@@ -52,11 +52,40 @@ public class NumbersGame {
     //determine whether there is an “any order” match with different numbers
    public boolean IsAnyOrder()
     {
-        boolean anyOrder;
-        anyOrder = (playerNumbers == winningNumber||
-                    playerNumbers/100 == winningNumber/100 ||
-                    playerNumbers%10 == winningNumber%10);
-        return anyOrder;
+//        boolean anyOrder = (playerNumbers == winningNumber||
+//                    playerNumbers/100 == winningNumber/100 ||
+//                    playerNumbers%10 == winningNumber%10);
+        int userNumber = this.playerNumbers;
+        int luckyNumber = this.winningNumber;
+        boolean playerWon = false;
+        
+        while (userNumber > 0)
+        {
+            int currentNumber = userNumber % 10;
+            
+            while (luckyNumber > 0)
+            {
+                int testNumber = luckyNumber % 10;
+                
+                if (currentNumber == testNumber)
+                {
+                    playerWon = true;
+                    break;
+                }
+                    
+                else
+                    playerWon = false;
+                
+                System.out.println();
+                
+                luckyNumber = luckyNumber / 10;
+                    
+            }
+            userNumber = userNumber / 10;
+        }   
+        
+        
+        return playerWon;
     }
     
     //determine whether a Box bet contains duplicate numbers
