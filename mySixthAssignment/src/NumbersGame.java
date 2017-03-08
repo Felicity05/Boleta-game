@@ -16,6 +16,7 @@ public class NumbersGame {
     private int playerNumbers;
     private int winningNumber;
     private double amountEarned;
+    
 
     public NumbersGame(String betType, double betAmount, int playerNumbers, int winningNumber) {
         this.betType = betType;
@@ -52,46 +53,25 @@ public class NumbersGame {
     //determine whether there is an “any order” match with different numbers
    public boolean IsAnyOrder()
     {
-//        boolean anyOrder = (playerNumbers == winningNumber||
-//                    playerNumbers/100 == winningNumber/100 ||
-//                    playerNumbers%10 == winningNumber%10);
-        int userNumber = this.playerNumbers;
-        int luckyNumber = this.winningNumber;
-        boolean playerWon = false;
-        
-        while (userNumber > 0)
-        {
-            int currentNumber = userNumber % 10;
-            
-            while (luckyNumber > 0)
-            {
-                int testNumber = luckyNumber % 10;
-                
-                if (currentNumber == testNumber)
-                {
-                    playerWon = true;
-                    break;
-                }
-                    
-                else
-                    playerWon = false;
-                
-                System.out.println();
-                
-                luckyNumber = luckyNumber / 10;
-                    
-            }
-            userNumber = userNumber / 10;
-        }   
-        
-        
-        return playerWon;
+       boolean anyOrder = (playerNumbers == winningNumber||
+                    playerNumbers/100 == winningNumber/100 ||
+                    playerNumbers%10 == winningNumber%10 ||
+                   (playerNumbers/10)%10 == (winningNumber/10)%10 ||
+                    playerNumbers%10 == winningNumber/100 ||
+                    playerNumbers%10 == (winningNumber/10)%10);
+        return anyOrder;
     }
     
     //determine whether a Box bet contains duplicate numbers
     public boolean HasDuplicates()
     {
-        return true;
+        //private int firstDigit = playerNumbers/100;
+      // private int secondDigit = (playerNumbers/10)%10;
+      //private int thirdDigit = playerNumbers/10;
+        boolean duplicates = (playerNumbers/10)%10 == playerNumbers%10 ||
+                              playerNumbers/100 == playerNumbers%10 ||
+                              playerNumbers/100 == (playerNumbers/10)%10;
+        return duplicates;
     }
    
 

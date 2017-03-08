@@ -38,6 +38,11 @@ public class NumbersGameTest {
         
         winningNumbers = Integer.parseInt(input);
         
+      
+        string       
+        boolean goodNumb = String.format("%3d", input);
+        
+        
         //game
         NumbersGame myGame = new NumbersGame(betType, betAmount, playerNumbers, winningNumbers);
         
@@ -45,7 +50,9 @@ public class NumbersGameTest {
         //getting all the data
         System.out.println("Here is your information:" + myGame.getData());
         
-               
+          
+        
+        
         //all the tests to see if the player win or lose 
         if (myGame.IsStraight()) //boolean method
         {
@@ -61,8 +68,16 @@ public class NumbersGameTest {
             if (myGame.IsAnyOrder())
             {
                 betType = "Box";
-                amountEarned = betAmount * 100;
+                if (myGame.HasDuplicates())
+                {
+                amountEarned = betAmount * 200;
                 System.out.printf("\nCongratulations, You win!!! \n\nThe amount you earned is: $%.2f ", amountEarned);
+                }
+                else 
+                {
+                amountEarned = betAmount * 100;
+                System.out.printf("\nCongratulations, You win!!! \n\nThe amount you earned is: $%.2f ", amountEarned);   
+                }
             }
             else 
             {
@@ -70,10 +85,5 @@ public class NumbersGameTest {
             }
         }
     }
-    
-    /* 456/100 cojo el 4 
-       456/10 cojo el 45
-       45 % 10 cojo el 5 
-       456 % 10 cojo el 6 
-     */
+   
 }
