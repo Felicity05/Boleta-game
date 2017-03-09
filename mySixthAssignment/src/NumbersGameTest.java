@@ -66,7 +66,7 @@ public class NumbersGameTest {
                 System.out.println("\nYou are not lucky today :( Sorry. Try again next time!");
             }
         } else {
-            System.out.println("\nThat's not a bet type. Lo siento, Insert your bet type again");
+            System.out.println("\nThat's not a bet type. Lo siento, Insert your bet type again.");
         }
     }
 

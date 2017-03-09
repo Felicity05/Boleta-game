@@ -5,7 +5,7 @@
  */
 
 /**
- *
+ *  
  * @author arelysalvarezpadilla
  */
 public class NumbersGame {
@@ -42,17 +42,17 @@ public class NumbersGame {
 
     //determine whether there is an “any order” match with different numbers
     public boolean IsAnyOrder() {
-        //private int firstDigit = playerNumbers/100;
-        // private int secondDigit = (playerNumbers/10)%10;
-        //private int thirdDigit = playerNumbers%10;
+        //firstDigit = playerNumbers/100;
+        //secondDigit = (playerNumbers/10)%10;
+        //thirdDigit = playerNumbers%10;
         boolean order1 = playerNumbers == winningNumber;
         boolean order2 = playerNumbers / 100 == winningNumber / 100 && ((playerNumbers % 10 == (winningNumber / 10) % 10)) && (playerNumbers / 10) % 10 == winningNumber % 10;
         boolean order3 = playerNumbers % 10 == winningNumber / 100 && playerNumbers / 100 == (winningNumber / 10) % 10 && (playerNumbers / 10) % 10 == winningNumber % 10;
         boolean order4 = playerNumbers % 10 == winningNumber / 100 && (playerNumbers / 10) % 10 == (winningNumber / 10) % 10 && playerNumbers / 100 == winningNumber / 100;
         boolean order5 = playerNumbers / 100 == (winningNumber / 10) % 10 && (playerNumbers / 10) % 10 == winningNumber / 100 && playerNumbers % 10 == winningNumber % 10;
         boolean order6 = playerNumbers / 100 == winningNumber % 10 && (playerNumbers / 10) % 10 == winningNumber / 100 && playerNumbers % 10 == (winningNumber / 10) % 10;
-        boolean anyOrder;
-        return anyOrder = order1 || order2 || order3 || order4 || order5 || order6;
+        boolean anyOrder = order1 || order2 || order3 || order4 || order5 || order6;
+        return anyOrder;
     }
 
     //determine whether a Box bet contains duplicate numbers
