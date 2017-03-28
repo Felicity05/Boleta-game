@@ -11,7 +11,8 @@ The winning number is: 123
 
 Your numbers are exactly the same ;) Congratulations, You won!!! 
 
-The amount you earned is: $600.00 BUILD SUCCESSFUL (total time: 19 seconds)
+The amount you earned is: $600.00 
+BUILD SUCCESSFUL (total time: 19 seconds)
 --------------------------------------------------------------------
 run:
 Here is your information:
@@ -24,7 +25,7 @@ Your playing number is: 123
 
 The winning number is: 321
 
-Sorry, you lost :( Try again next time!
+Sorry, you lost :( The amount you earned is: $0.00. Try again next time!
 BUILD SUCCESSFUL (total time: 31 seconds)
 --------------------------------------------------------------------
 run:
@@ -53,7 +54,7 @@ Your playing number is: 123
 
 The winning number is: 322
 
-You are not lucky today :( Sorry. Try again next time!
+Sorry, you are not lucky today :( The amount you earned is: $0.00. Try again next time!
 BUILD SUCCESSFUL (total time: 12 seconds)
 ----------------------------------------------------------------------
 run:
@@ -67,7 +68,7 @@ Your playing number is: 484
 
 The winning number is: 748
 
-You are not lucky today :( Sorry. Try again next time!
+Sorry, you are not lucky today :( The amount you earned is: $0.00. Try again next time!
 BUILD SUCCESSFUL (total time: 42 seconds)
 ------------------------------------------------------------------------
 run:
@@ -83,5 +84,6 @@ The winning number is: 880
 
 You have a duplicate. Congratulations, you won!!! 
 
-The amount you earned is: $400.00 BUILD SUCCESSFUL (total time: 25 seconds)
+The amount you earned is: $400.00 
+BUILD SUCCESSFUL (total time: 21 seconds)
 

@@ -1,4 +1,5 @@
 
+import numbersPackage.NumbersGame;
 import javax.swing.JOptionPane;
 
 /*
@@ -22,9 +23,18 @@ public class NumbersGameTest {
         int winningNumbers;
         double amountEarned;
         String input;
+        String betType = null;
 
-        String betType = JOptionPane.showInputDialog("Select your bet type. \n\nIt can be either \"Straight\" or \"Box\" ");
+        //get the bet typre from the user 
+        betType = JOptionPane.showInputDialog("Select your bet type. \n\nIt can be either \"Straight\" or \"Box\" ");
 
+        //tests if the user type something different to "Straight" or "Box" and if so show an error message
+        while (!betType.equalsIgnoreCase("Straight") && !betType.equalsIgnoreCase("Box")) {
+            JOptionPane.showMessageDialog(null, "Sorry that's not a valid bet type. Insert the bet type againg.");
+            betType = JOptionPane.showInputDialog("Select your bet type. \n\nIt can be either \"Straight\" or \"Box\" ");
+        }
+
+        //get all the other data from user
         input = JOptionPane.showInputDialog("Insert your bet amount");
 
         betAmount = Double.parseDouble(input);
@@ -37,37 +47,18 @@ public class NumbersGameTest {
 
         winningNumbers = Integer.parseInt(input);
 
-        //game
+        //create a Game object (myGame) using these values
         NumbersGame myGame = new NumbersGame(betType, betAmount, playerNumbers, winningNumbers);
 
-        //getting all the data
+        //get all the data that the user entered
         System.out.println("Here is your information:" + myGame.getData());
 
-        //all the tests to see if the player win or lose 
-        if ("Straight".equals(betType) || "straight".equals(betType)) //boolean method
-        {
-            if (myGame.IsExactOrder()) {
-                amountEarned = betAmount * 600;    //player wins $600 for each $1 wagered
-                System.out.printf("\nYour numbers are exactly the same ;) Congratulations, You won!!! \n\nThe amount you earned is: $%.2f ", amountEarned);
-            } else {
-                System.out.println("\nSorry, you lost :( Try again next time!");
-            }
-        } else if ("Box".equals(betType) || "box".equals(betType))// Box bet
-        {
-            if (myGame.IsAnyOrder()) {
-                if (myGame.HasDuplicates()) {
-                    amountEarned = betAmount * 200;
-                    System.out.printf("\nYou have a duplicate. Congratulations, you won!!! \n\nThe amount you earned is: $%.2f ", amountEarned);
-                } else {
-                    amountEarned = betAmount * 100;
-                    System.out.printf("\nCongratulations, You won!!! \n\nThe amount you earned is: $%.2f ", amountEarned);
-                }
-            } else {
-                System.out.println("\nYou are not lucky today :( Sorry. Try again next time!");
-            }
-        } else {
-            System.out.println("\nThat's not a bet type. Lo siento, Insert your bet type again.");
-        }
+        //call computeAmountEarned for myGame object to see if the player win or loses
+        myGame.computeAmountEarned();
+
+        //print a notification message to show the player what happened
+        System.out.println(myGame.getMessage());
+
     }
 
 }
